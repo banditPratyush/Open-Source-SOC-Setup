@@ -1,0 +1,37 @@
+#Steps: 
+
+Install Docker 
+
+Install Wazuh using docker-compose 
+
+Open Ports 
+
+Docker Images Required: 
+
+wazuh/wazuh-manager 
+
+wazuh/wazuh-indexer 
+
+wazuh/wazuh-dashboard 
+
+All these Wazuh Docker images are found in the Docker hub. 
+
+#Install Docker 
+
+To install docker on ubuntu 
+
+Remove old config and docker installation 
+
+sudo apt-get remove docker docker-engine docker.io 
+
+Update the system 
+
+sudo apt update 
+
+Install the docker 
+
+sudo apt install docker.io 
+
+Confirm docker is installed properly 
+
+sudo docker --version 
