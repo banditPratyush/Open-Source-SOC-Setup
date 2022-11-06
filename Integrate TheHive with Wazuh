@@ -1,0 +1,11 @@
+cd /opt/ 
+git clone https://github.com/crow1011/wazuh2thehive.git 
+cd /var/ossec/framework/python/bin/pip3 
+install -r /opt/wazuh2thehive/requirements.txt 
+cp /opt/wazuh2thehive/custom-w2thive.py /var/ossec/integrations/custom-w2thive.py 
+cp /opt/wazuh2thehive/custom-w2thive /var/ossec/integrations/custom-w2thive 
+chmod 755 /var/ossec/integrations/custom-w2thive.py 
+chmod 755 /var/ossec/integrations/custom-w2thive 
+chown root:wazuh /var/ossec/integrations/custom-w2thive.py 
+chown root:wazuh /var/ossec/integrations/custom-w2thive 
+nano /var/ossec/etc/ossec.conf
