@@ -1,0 +1,47 @@
+Clone the git repo https://github.com/spitzbuaamy/AbuseCH-to-MISP.git to the server where your MISP docker container is running 
+
+git clone https://github.com/spitzbuaamy/AbuseCH-to-MISP.git 
+
+MISP_KEY: <API KEY> 
+MISP_URL: https://<MISP Instance IP>/ 
+MISP_VERIFYCERT: False 
+MISP_ORG_NAME: <Organization Name> 
+MISP_ORG_ID: <Organization ID> 
+MISP_ORG_UUID: <Organization UUID> 
+HTTP_PROXY: None 
+HTTPS_PROXY: None 
+download_dir: /tmp/ 
+log_level: DEBUG 
+max_attributes_per_event: 20000 
+tags: 
+  - tlp:green 
+  - pap:green 
+  - admiralty-scale:source-reliability="a" 
+galaxies: 
+  - banker 
+  - botnet 
+  - exploit-kit 
+  - malpedia 
+  - malware 
+  - rat 
+  - tool 
+  - threat actor 
+  - stealer 
+  - ransomware 
+ 
+FeodoTrackerImportAggressive: False 
+MalwareBazaarImportFull: False 
+SSLBlackListImportAggressiveIPs: False 
+# Feeds: full, recent, online 
+UrlHausFeed: recent 
+# Save url as attribute or object 
+save_url_as: object 
+
+Run the python file after installing the requirements 
+
+pip3 install -r Requirements.txt 
+sudo python3 abusech-to-misp.py 
+
+Go and watch a movie🍿 it will take a lot of time to push all the data into MISP 
+
+ 
