@@ -1,0 +1,12 @@
+/var/ossec/etc/shared/agent.conf 
+
+<agent_config> 
+    <localfile> 
+        <log_format>json</log_format> 
+        <location>/var/log/suricata/eve.json</location> 
+    </localfile> 
+</agent_config> 
+
+Restart the wazuh agent service 
+
+systemctl restart wazuh-agent 
