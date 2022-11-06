@@ -1,0 +1,29 @@
+In this setup, we will do a single node deployment. 
+
+Clone the Wazuh docker git repository 
+
+git clone https://github.com/wazuh/wazuh-docker.git -b v4.3.7 --depth=1 
+
+Update the certs config 
+
+To update the certs config, visit wazuh-docker/single-node/config 
+
+There you will find the certs.yml if you want to update the IP or name update here 
+
+Then use the generate-indexer-certs.yml which is inside wazuh-docker/single-node to generate your certificates for the HTTPS connection. 
+
+docker-compose -f generate-indexer-certs.yml run --rm generator 
+
+This will save the certificates into the config/wazuh_indexer_ssl_certs directory. 
+
+Start the docker 
+
+docker-compose up -d 
+
+Visit https://<Your Instance IP> 
+
+If you are not able to get your login page, then: 
+
+Check if the docker is running properly 
+
+sudo docker ps 
