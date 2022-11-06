@@ -1,0 +1,11 @@
+cd /root 
+apt install-y install epel-release wget jq 
+curl -O https://copr.fedorainfracloud.org/coprs/jasonish/suricata-6.0/repo/epel-7/jasonish-suricata-6.0-epel-7.repo 
+apt -y install suricata 
+wget https://rules.emergingthreats.net/open/suricata-6.0.3/emerging.rules.tar.gz 
+tar zxvf emerging.rules.tar.gz 
+rm /etc/suricata/rules/* -f 
+mv rules/*.rules /etc/suricata/rules/ 
+rm -f /etc/suricata/suricata.yaml 
+wget -O /etc/suricata/suricata.yaml http://www.branchnetconsulting.com/wazuh/suricata.yaml 
+sudo suricata-update # to update the newly added rules in suricata
